@@ -1,0 +1,23 @@
+{
+  "name": "battery-stats-api",
+  "version": "1.0.0",
+  "description": "Fetch BMS battery stats from Argon",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/potpiejimmy/battery-stats-api.git"
+  },
+  "author": "Thorsten Liese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/potpiejimmy/battery-stats-api/issues"
+  },
+  "homepage": "https://github.com/potpiejimmy/battery-stats-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
