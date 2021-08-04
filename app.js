@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const express = require('express');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 const deviceId = process.env.DEVICE_ID;
 const accessToken = process.env.ACCESS_TOKEN;
