@@ -23,6 +23,7 @@ app.get('/stats', async (req, res) => {
     let stats = iores.return_value;
 
     let soc = stats >> 16;
+    soc /= 10; // soc is in per mill
     //console.log("SoC: " + soc + "%");
 
     let current = stats & 0xffff;
