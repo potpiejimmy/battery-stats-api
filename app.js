@@ -26,14 +26,14 @@ app.get('/stats', async (req, res) => {
     soc /= 10; // soc is in per mill
     //console.log("SoC: " + soc + "%");
 
-    let current = stats & 0xffff;
-    if (current >= 0x8000) current -= 0x10000;
-    current /= 100; // is in cA
-    //console.log("I (A): " + current / 100);
+    let watts = stats & 0xffff;
+    if (watts >= 0x8000) watts -= 0x10000;
+    watts /= 10; // is in 10th of W
+    //console.log("P (W): " + watts);
 
     res.json({
         soc,
-        current
+        watts
     })
 })
 
