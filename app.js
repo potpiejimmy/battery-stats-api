@@ -7,6 +7,15 @@ const port = process.env.PORT;
 const deviceId = process.env.DEVICE_ID;
 const accessToken = process.env.ACCESS_TOKEN;
 
+// add CORS headers
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Origin", req.headers.origin);
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+    next();
+});
+
 app.get('/stats', async (req, res) => {
     let iores = await fetch("https://api.particle.io/v1/devices/"+deviceId+"/stats", {
         method: 'POST',
